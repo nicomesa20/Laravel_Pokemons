@@ -1,7 +1,7 @@
 @csrf
         <div class="form-group">
             <label for="">Nombre</label>
-        <input type="text" name="name" class="form-control" value="@isset($trainer->name){{$trainer->name}}@endisset">
+            <input type="text" name="name" class="form-control" value="@isset($trainer->name){{$trainer->name}}@endisset">
         </div>
         <div class="form-group">
             <label for="">Slug:</label>

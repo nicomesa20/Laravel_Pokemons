@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 
 use  LaraDex\Http\Requests\StoreTrainerRequest;
 
+use Illuminate\Support\Facades\File;
+
 
 class TrainerController extends Controller
 {
@@ -50,7 +52,8 @@ class TrainerController extends Controller
         $trainer->slug = $request->input('slug');
         $trainer->avatar = $name;
         $trainer->save();
-        return 'saved';
+        // return 'saved';
+        return redirect()->route('trainers.index')->with('status','Se creo correctamente');
     }
 
     /**
@@ -93,7 +96,8 @@ class TrainerController extends Controller
         }
         $trainer->save();
 
-        return 'updated';
+        // return 'updated';
+        return redirect()->route('trainers.show',[$trainer])->with('status','Se actualizo correctamente');
     }
 
     /**
@@ -105,8 +109,9 @@ class TrainerController extends Controller
     public function destroy(Trainer $trainer)
     {
         $file_path = public_path().'/images/'.$trainer->avatar;
-        // \File::delete($file_path);
+        echo $file_path;
+        File::delete($file_path);
         $trainer->delete();
-        return 'deleted';
+        return redirect()->route('trainers.index')->with('status','Se eliminó correctamente');
     }
 }

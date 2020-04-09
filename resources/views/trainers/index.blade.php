@@ -3,7 +3,7 @@
 @section('title','Trainers Create')
 
 @section('content')
-
+    @include('common.success ')
     <div class="row">
         @foreach ($trainers as $trainer)
             <div class="col-sm">

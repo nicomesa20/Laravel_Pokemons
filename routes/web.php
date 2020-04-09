@@ -19,3 +19,16 @@ Route::get('/', function () {
 });
 
 Route::resource('trainers','TrainerController');
+
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
