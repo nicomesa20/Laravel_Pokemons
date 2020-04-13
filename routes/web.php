@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use LaraDex\Http\Controllers\PokemonController;
 use LaraDex\Http\Controllers\TrainerController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,16 +21,12 @@ Route::get('/', function () {
 });
 
 Route::resource('trainers','TrainerController');
-
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
+// Route::resource('pokemons', 'PokemonController');
+Route::post('trainers/{trainer}/pokemons','PokemonController@store');
+Route::get('trainers/{trainer}/pokemons','PokemonController@index');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
