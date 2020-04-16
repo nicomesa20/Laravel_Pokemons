@@ -81,12 +81,12 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Mi Aplicacion
+                    POKEMON
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Trainers</a>
-                    <a href="https://laracasts.com">Pokemons</a>
+                    <a href="/trainers">Trainers</a>
+                    {{-- <a href="https://laracasts.com">Pokemons</a> --}}
                 </div>
             </div>
         </div>

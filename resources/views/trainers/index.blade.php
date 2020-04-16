@@ -4,6 +4,7 @@
 
 @section('content')
     @include('common.success ')
+    <a href="/trainers/create" class="btn btn-primary">Crear Trainer</a>
     <div class="row">
         @foreach ($trainers as $trainer)
             <div class="col-sm">
